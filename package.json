@@ -1,0 +1,17 @@
+{
+  "name": "model-routing-policy-checker",
+  "version": "0.0.0",
+  "description": "Check model routing rules against capability, risk, latency and cost limits.",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "node --test"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/edilec/model-routing-policy-checker"
+  }
+}
