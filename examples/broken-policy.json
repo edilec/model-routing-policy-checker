@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1",
+  "tasks": {
+    "summarise-with-tools": {
+      "requires": ["text", "tool-calling"],
+      "authority": ["internal"],
+      "expectedInputTokens": 5000,
+      "expectedOutputTokens": 500,
+      "maxCostPerCallUsd": 0.03,
+      "entry": "cheap-first"
+    }
+  },
+  "routes": {
+    "cheap-first": { "task": "summarise-with-tools", "model": "haiku-mini", "fallbackTo": "mid-second" },
+    "mid-second": { "task": "summarise-with-tools", "model": "sonnet-mid", "fallbackTo": "cheap-first" }
+  }
+}
