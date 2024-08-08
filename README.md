@@ -85,7 +85,7 @@ npm run check
   "schemaVersion": "1",
   "capturedAt": "2026-09-01",
   "models": {
-    "haiku-mini": {
+    "compact-mini": {
       "capabilities": ["text"],
       "maxContextTokens": 32768,
       "maxOutputTokens": 4096,
@@ -134,8 +134,8 @@ be a snapshot that omits the field routing every task it likes.
     }
   },
   "routes": {
-    "tools-mid": { "task": "answer-with-tools", "model": "sonnet-mid", "fallbackTo": "tools-large" },
-    "tools-large": { "task": "answer-with-tools", "model": "opus-large" }
+    "tools-mid": { "task": "answer-with-tools", "model": "standard-mid", "fallbackTo": "tools-large" },
+    "tools-large": { "task": "answer-with-tools", "model": "flagship-large" }
   }
 }
 ```

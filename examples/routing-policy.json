@@ -22,9 +22,9 @@
     }
   },
   "routes": {
-    "triage-cheap": { "task": "triage-ticket", "model": "haiku-mini", "fallbackTo": "triage-backup" },
-    "triage-backup": { "task": "triage-ticket", "model": "sonnet-mid" },
-    "tools-mid": { "task": "answer-with-tools", "model": "sonnet-mid", "fallbackTo": "tools-large" },
-    "tools-large": { "task": "answer-with-tools", "model": "opus-large" }
+    "triage-cheap": { "task": "triage-ticket", "model": "compact-mini", "fallbackTo": "triage-backup" },
+    "triage-backup": { "task": "triage-ticket", "model": "standard-mid" },
+    "tools-mid": { "task": "answer-with-tools", "model": "standard-mid", "fallbackTo": "tools-large" },
+    "tools-large": { "task": "answer-with-tools", "model": "flagship-large" }
   }
 }

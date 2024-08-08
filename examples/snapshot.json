@@ -2,7 +2,7 @@
   "schemaVersion": "1",
   "capturedAt": "2026-09-01",
   "models": {
-    "haiku-mini": {
+    "compact-mini": {
       "capabilities": ["text"],
       "maxContextTokens": 32768,
       "maxOutputTokens": 4096,
@@ -11,7 +11,7 @@
       "authorisedFor": ["internal"],
       "status": "available"
     },
-    "sonnet-mid": {
+    "standard-mid": {
       "capabilities": ["text", "tool-calling", "vision"],
       "maxContextTokens": 200000,
       "maxOutputTokens": 8192,
@@ -20,7 +20,7 @@
       "authorisedFor": ["internal", "customer-data"],
       "status": "available"
     },
-    "opus-large": {
+    "flagship-large": {
       "capabilities": ["text", "tool-calling", "vision", "long-context"],
       "maxContextTokens": 200000,
       "maxOutputTokens": 32000,

@@ -11,7 +11,7 @@
     }
   },
   "routes": {
-    "cheap-first": { "task": "summarise-with-tools", "model": "haiku-mini", "fallbackTo": "mid-second" },
-    "mid-second": { "task": "summarise-with-tools", "model": "sonnet-mid", "fallbackTo": "cheap-first" }
+    "cheap-first": { "task": "summarise-with-tools", "model": "compact-mini", "fallbackTo": "mid-second" },
+    "mid-second": { "task": "summarise-with-tools", "model": "standard-mid", "fallbackTo": "cheap-first" }
   }
 }
