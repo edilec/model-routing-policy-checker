@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "1",
+  "capturedAt": "2026-09-01",
+  "models": {
+    "compact-mini": {
+      "capabilities": ["text"],
+      "maxContextTokens": 32768,
+      "maxOutputTokens": 4096,
+      "inputPricePerMillion": 0.25,
+      "outputPricePerMillion": 1.25,
+      "authorisedFor": ["internal"],
+      "status": "available"
+    },
+    "standard-mid": {
+      "capabilities": ["text", "tool-calling", "vision"],
+      "maxContextTokens": 200000,
+      "maxOutputTokens": 8192,
+      "inputPricePerMillion": 3,
+      "outputPricePerMillion": 15,
+      "authorisedFor": ["internal", "customer-data"],
+      "status": "available"
+    },
+    "flagship-large": {
+      "capabilities": ["text", "tool-calling", "vision", "long-context"],
+      "maxContextTokens": 200000,
+      "maxOutputTokens": 32000,
+      "inputPricePerMillion": 15,
+      "outputPricePerMillion": 75,
+      "authorisedFor": ["internal", "customer-data", "regulated"],
+      "status": "available"
+    },
+    "legacy-01": {
+      "capabilities": ["text"],
+      "maxContextTokens": 8192,
+      "maxOutputTokens": 2048,
+      "inputPricePerMillion": 0.1,
+      "outputPricePerMillion": 0.4,
+      "authorisedFor": ["internal"],
+      "status": "retired"
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "name": "model-routing-policy-checker",
+  "version": "0.1.0",
+  "description": "Check model routing rules against a supplied capability and pricing snapshot: task capability needs, authority, context and output limits, per-call budget, and a fallback graph that must terminate.",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "lint": "node --check bin/model-routing-policy-checker.mjs && node --check src/document.mjs && node --check src/graph.mjs && node --check src/index.mjs && node --check src/policy.mjs && node --check src/snapshot.mjs && node --check src/text.mjs && node --check test/acceptance.test.mjs && node --check test/cli.test.mjs && node --check test/confinement.test.mjs && node --check test/determinism.test.mjs && node --check test/graph.test.mjs && node --check test/helpers.mjs && node --check test/incomplete.test.mjs && node --check test/limits.test.mjs && node --check test/ordering.test.mjs && node --check test/parse-failure.test.mjs && node --check test/rule-catalog.test.mjs && node --check test/sanitisation.test.mjs && node --check test/severity-outcomes.test.mjs && node --check test/snapshot.test.mjs && node --check test/text.test.mjs",
+    "test": "node --test",
+    "test:coverage": "node --test --experimental-test-coverage --test-coverage-include=src/**",
+    "example": "node bin/model-routing-policy-checker.mjs --policy examples/routing-policy.json --snapshot examples/snapshot.json --config examples/checker.config.json",
+    "example:failing": "node bin/model-routing-policy-checker.mjs --policy examples/broken-policy.json --snapshot examples/snapshot.json; test $? -eq 1",
+    "pack:check": "npm pack --dry-run",
+    "check": "npm run lint && npm test && npm run example && npm run example:failing && npm run pack:check"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edilec/model-routing-policy-checker.git"
+  },
+  "bin": {
+    "model-routing-policy-checker": "./bin/model-routing-policy-checker.mjs"
+  },
+  "exports": {
+    ".": "./src/index.mjs"
+  },
+  "files": [
+    "bin",
+    "src",
+    "examples",
+    "docs",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "model-routing",
+    "llm",
+    "policy",
+    "capability-matrix",
+    "fallback",
+    "cost-control",
+    "cli"
+  ],
+  "author": "Edilec Private Limited",
+  "bugs": {
+    "url": "https://github.com/edilec/model-routing-policy-checker/issues"
+  },
+  "homepage": "https://github.com/edilec/model-routing-policy-checker#readme"
+}

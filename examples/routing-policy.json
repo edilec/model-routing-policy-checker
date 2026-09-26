@@ -1,0 +1,30 @@
+{
+  "schemaVersion": "1",
+  "defaults": {
+    "maxSnapshotAgeDays": 30
+  },
+  "tasks": {
+    "triage-ticket": {
+      "requires": ["text"],
+      "authority": ["internal"],
+      "expectedInputTokens": 4000,
+      "expectedOutputTokens": 400,
+      "maxCostPerCallUsd": 0.02,
+      "entry": "triage-cheap"
+    },
+    "answer-with-tools": {
+      "requires": ["text", "tool-calling"],
+      "authority": ["internal", "customer-data"],
+      "expectedInputTokens": 12000,
+      "expectedOutputTokens": 1500,
+      "maxCostPerCallUsd": 0.3,
+      "entry": "tools-mid"
+    }
+  },
+  "routes": {
+    "triage-cheap": { "task": "triage-ticket", "model": "compact-mini", "fallbackTo": "triage-backup" },
+    "triage-backup": { "task": "triage-ticket", "model": "standard-mid" },
+    "tools-mid": { "task": "answer-with-tools", "model": "standard-mid", "fallbackTo": "tools-large" },
+    "tools-large": { "task": "answer-with-tools", "model": "flagship-large" }
+  }
+}
